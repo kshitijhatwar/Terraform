@@ -1,6 +1,6 @@
 resource "aws_elastic_beanstalk_environment" "vpofile-bean-prod" {
   name                = "vpofile-bean-prod"
-  application         = aws_elastic_beanstalk_application.tftest.name
+  application         = aws_elastic_beanstalk_application.vprofile-prod.name
   solution_stack_name = "64bit Amazon Linux 2023 v5.6.2 running Tomcat 10 Corretto 21"
   cname_prefix        = "vprofile-kshitijhatwar"
 
@@ -10,7 +10,7 @@ resource "aws_elastic_beanstalk_environment" "vpofile-bean-prod" {
     value     = "aws-elasticbeanstack-service-role"
   }
 
-    setting {
+  setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "RootVolumeType"
     value     = "gp3"
@@ -147,5 +147,7 @@ resource "aws_elastic_beanstalk_environment" "vpofile-bean-prod" {
     name      = "SecurityGroups"
     value     = aws_security_group.vprofile-bean-elb-sg.id
   }
+
+  depends_on = [aws_security_group.vprofile-bean-elb-sg, aws_security_group.vprofile-beaninst-sg]
 
 }
