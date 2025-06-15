@@ -71,7 +71,7 @@ variable "rmquser" {
 }
 
 variable "rmqpass" {
-  default = "admin123"
+  default = "admin123456789"
 }
 
 

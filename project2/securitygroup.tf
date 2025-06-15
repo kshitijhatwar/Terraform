@@ -22,11 +22,11 @@ resource "aws_vpc_security_group_ingress_rule" "allow_https_ELB" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_http_fromELB" {
-  security_group_id           = aws_security_group.vprofile-bean-elb-sg.id
+  security_group_id            = aws_security_group.vprofile-bean-elb-sg.id
   referenced_security_group_id = aws_security_group.vprofile-bean-elb-sg.id
-  from_port                   = 80
-  ip_protocol                 = "tcp"
-  to_port                     = 80
+  from_port                    = 80
+  ip_protocol                  = "tcp"
+  to_port                      = 80
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4-bean-elb-sg" {
@@ -106,27 +106,27 @@ resource "aws_security_group" "vprofile-backend-sg" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "AllowAllFromBeanInstance" {
-  security_group_id           = aws_security_group.vprofile-backend-sg.id
+  security_group_id            = aws_security_group.vprofile-backend-sg.id
   referenced_security_group_id = aws_security_group.vprofile-beaninst-sg.id
-  from_port                   = 0
-  ip_protocol                 = "tcp"
-  to_port                     = 65535
+  from_port                    = 0
+  ip_protocol                  = "tcp"
+  to_port                      = 65535
 }
 
 resource "aws_vpc_security_group_ingress_rule" "AllowAllBackendToInterract" {
-  security_group_id           = aws_security_group.vprofile-backend-sg.id
+  security_group_id            = aws_security_group.vprofile-backend-sg.id
   referenced_security_group_id = aws_security_group.vprofile-backend-sg.id
-  from_port                   = 0
-  ip_protocol                 = "tcp"
-  to_port                     = 65535
+  from_port                    = 0
+  ip_protocol                  = "tcp"
+  to_port                      = 65535
 }
 
 resource "aws_vpc_security_group_ingress_rule" "Allow3306FromBastionHost" {
-  security_group_id           = aws_security_group.vprofile-backend-sg.id
+  security_group_id            = aws_security_group.vprofile-backend-sg.id
   referenced_security_group_id = aws_security_group.vprofile-bastion-sg.id
-  from_port                   = 3306
-  ip_protocol                 = "tcp"
-  to_port                     = 3306
+  from_port                    = 3306
+  ip_protocol                  = "tcp"
+  to_port                      = 3306
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4-backend-sg" {
