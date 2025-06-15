@@ -7,7 +7,7 @@ resource "aws_elastic_beanstalk_environment" "vpofile-bean-prod" {
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "IamInstanceProfile"
-    value     = "aws-elasticbeanstack-service-role"
+    value     = "vprofile-reach-beanrole"
   }
 
   setting {

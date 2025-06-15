@@ -27,31 +27,31 @@ variable "VPC_Name" {
 }
 
 variable "VPC_CIDR" {
-  default = "24.0.0.0/16"
+  default = "10.0.0.0/16"
 }
 
 variable "VPC_PRVCIDRSUB1" {
-  default = "24.1.0.0/24"
+  default = "10.0.1.0/24"
 }
 
 variable "VPC_PRVCIDRSUB2" {
-  default = "24.2.0.0/24"
+  default = "10.0.2.0/24"
 }
 
 variable "VPC_PRVCIDRSUB3" {
-  default = "24.3.0.0/24"
+  default = "10.0.3.0/24"
 }
 
 variable "VPC_PUBCIDRSUB1" {
-  default = "24.0.101.0/24"
+  default = "10.0.101.0/24"
 }
 
 variable "VPC_PUBCIDRSUB2" {
-  default = "24.0.102.0/24"
+  default = "10.0.102.0/24"
 }
 
 variable "VPC_PUBCIDRSUB3" {
-  default = "24.0.103.0/24"
+  default = "10.0.103.0/24"
 }
 
 variable "dbname" {
