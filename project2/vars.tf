@@ -54,6 +54,24 @@ variable "VPC_PUBCIDRSUB3" {
   default = "24.0.103.0/24"
 }
 
+variable "dbname" {
+  default = "accounts"
+}
 
+variable "dbuser" {
+  default = "root"
+}
+
+variable "dbpass" {
+  default = "admin123"
+}
+
+variable "rmquser" {
+  default = "admin"
+}
+
+variable "rmqpass" {
+  default = "admin123"
+}
 
 
