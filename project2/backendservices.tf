@@ -41,12 +41,13 @@ resource "aws_elasticache_cluster" "vprofile-cache" {
 
 #----------------------------------------------------------------------------------
 resource "aws_mq_broker" "vprofile-rmq" {
-  broker_name        = "vprofile-rmq"
-  engine_type        = "RabbitMQ"
-  engine_version     = "5.17.6"
-  host_instance_type = "mq.t3.micro"
-  security_groups    = [aws_security_group.vprofile-backend-sg.id]
-  subnet_ids         = [module.ksh-vpc.private_subnets[0]]
+  broker_name                = "vprofile-rmq"
+  engine_type                = "RabbitMQ"
+  engine_version             = "5.17.6"
+  host_instance_type         = "mq.t3.micro"
+  auto_minor_version_upgrade = true
+  security_groups            = [aws_security_group.vprofile-backend-sg.id]
+  subnet_ids                 = [module.ksh-vpc.private_subnets[0]]
 
   user {
     username = var.rmquser
