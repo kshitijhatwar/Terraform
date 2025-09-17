@@ -9,8 +9,8 @@ terraform {
 
 provider "vsphere" {
   user                 = "khatwar@yotta.com"
-  password             = "Sushilamummy2@"
-  vsphere_server       = "10.0.24.20"
+  password             = "####"
+  vsphere_server       = "333"
   allow_unverified_ssl = true
 }
 data "vsphere_datacenter" "dc" {
