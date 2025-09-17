@@ -32,7 +32,7 @@ data "vsphere_network" "network" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-data "vsphere_vm_temp" "template" {
+data "vsphere_virtual_machine" "template" {
   name          = "Template-Ubuntu24"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
@@ -56,7 +56,7 @@ output "network_id" {
 }
 
 output "template_id" {
-  value = data.vsphere_vm_temp.template.id
+  value = data.vsphere_virtual_machine.template.id
 }
 
 
