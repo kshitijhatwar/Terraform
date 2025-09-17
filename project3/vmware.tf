@@ -17,18 +17,20 @@ data "vsphere_datacenter" "dc" {
   name = "YTTNM1PVTCLD"
 }
 
+
+data "vsphere_datastore" "datastore" {
+  name          = "PrivateCloudStorage48"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+
+
 output "datacenter_id" {
   value = data.vsphere_datacenter.dc.id
 }
 
-data "vsphere_compute_cluster" "cluster" {
-  name          = "/"
-  datacenter_id = data.vsphere_datacenter.dc.id
+output "datacenter_id" {
+  value = data.vsphere_datacenter.dc.id
 }
 
-output "cluster_id" {
-  value = data.vsphere_compute_cluster.cluster.id
-}
-output "cluster_name" {
-  value = data.vsphere_compute_cluster.cluster.name
-}
+
