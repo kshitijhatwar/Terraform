@@ -27,6 +27,17 @@ data "vsphere_compute_cluster" "cluster" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
+data "vsphere_network" "network" {
+  name          = "Server-DMZ"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_vm_temp" "template" {
+  name          = "Template-Ubuntu24"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+
 
 output "datacenter_id" {
   value = data.vsphere_datacenter.dc.id
@@ -40,6 +51,12 @@ output "cluster_id" {
   value = data.vsphere_compute_cluster.cluster.id
 }
 
+output "network_id" {
+  value = data.vsphere_network.network.id
+}
 
+output "template_id" {
+  value = data.vsphere_vm_temp.template.id
+}
 
 
