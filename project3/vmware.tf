@@ -14,7 +14,7 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 data "vsphere_datacenter" "dc" {
-  name = "DatacenterName"
+  name = "YTTNM1PVTCLD"
 }
 
 output "datacenter_id" {
