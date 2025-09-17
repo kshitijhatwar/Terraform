@@ -29,7 +29,7 @@ output "datacenter_id" {
   value = data.vsphere_datacenter.dc.id
 }
 
-output "datacenter_id" {
+output "datastore_name" {
   value = data.vsphere_datacenter.dc.id
 }
 
